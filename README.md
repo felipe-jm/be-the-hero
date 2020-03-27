@@ -74,7 +74,7 @@ yarn start
 
 ```
 
-Then you just need to have the _:point_right: <a href="https://play.google.com/store/apps/details?id=host.exp.exponent&hl=pt_BR">Expo app</a> :point_left:_ installed in your phone scan the qrcode provided :ok_hand:
+Then you just need to have the _:point_right: <a href="https://play.google.com/store/apps/details?id=host.exp.exponent&hl=pt_BR">Expo app</a> :point_left:_ installed in your phone and scan the qrcode provided :ok_hand:
 
 ## Check out the mobile version! :pray:
 

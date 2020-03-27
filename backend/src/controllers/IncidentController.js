@@ -15,10 +15,10 @@ module.exports = {
         "incidents.*",
         "ongs.name",
         "ongs.email",
+        "ongs.whatsapp",
         "ongs.city",
         "ongs.uf"
-      ])
-      .where('ong_id', ong_id);
+      ]);
 
     response.header("X-Total-Count", count["count(*)"]);
 
@@ -47,9 +47,6 @@ module.exports = {
       .where("id", id)
       .select("ong_id")
       .first();
-
-    console.log('ong_id', ong_id);
-    console.log('incident ong id', incident.ong_id);
       
     if (incident.ong_id !== ong_id) {
       return response.status(401).json({

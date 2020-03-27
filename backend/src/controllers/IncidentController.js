@@ -3,6 +3,7 @@ import connection from "../database/connection";
 module.exports = {
   async index(request, response) {
     const { page = 1 } = request.query;
+    const ong_id = request.headers.authorization;
 
     const [count] = await connection("incidents").count();
 
@@ -16,13 +17,14 @@ module.exports = {
         "ongs.email",
         "ongs.city",
         "ongs.uf"
-      ]);
+      ])
+      .where('ong_id', ong_id);
 
     response.header("X-Total-Count", count["count(*)"]);
 
     return response.json(incidents);
   },
-
+ 
   async store(request, response) {
     const { title, description, value } = request.body;
     const ong_id = request.headers.authorization;
@@ -46,6 +48,9 @@ module.exports = {
       .select("ong_id")
       .first();
 
+    console.log('ong_id', ong_id);
+    console.log('incident ong id', incident.ong_id);
+      
     if (incident.ong_id !== ong_id) {
       return response.status(401).json({
         error: "Operation not allowed"

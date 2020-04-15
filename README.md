@@ -8,8 +8,6 @@ Be The Hero
   Save the day. Be a hero. :rocket:
 </h4>
 
-# Frontend
-
 ## :computer: Run it!
 
 ```bash
